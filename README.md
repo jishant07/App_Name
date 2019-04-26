@@ -2,6 +2,4 @@
 For submission during an internship
 
 To Dos :
-	Styling
-	Graphs
-	Addition of the data
+	Styling -> Graphs -> Addition of the data
