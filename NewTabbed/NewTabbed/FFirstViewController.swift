@@ -103,7 +103,6 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad()
     {
-        deleteData()
         retrieveData()
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
