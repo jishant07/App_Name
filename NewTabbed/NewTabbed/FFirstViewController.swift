@@ -37,6 +37,28 @@ func retrieveData()
         print(err.localizedDescription)
     }
 }
+func deleteData()
+{
+    let managedContext = getContext()
+    let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
+    do
+    {
+        let record = try getContext().fetch(fetchReq)
+        try managedContext.delete(record[0] as! NSManagedObject)
+        do
+        {
+            try managedContext.save()
+        }
+        catch
+        {
+            print(error)
+        }
+    }
+    catch
+    {
+        print(error)
+    }
+}
 class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     @IBOutlet weak var mytab: UITableView!
@@ -49,28 +71,6 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         else
         {
             return subtitleData.count
-        }
-    }
-    func deleteData()
-    {
-        let managedContext = getContext()
-        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
-        do
-        {
-            let record = try getContext().fetch(fetchReq)
-            try managedContext.delete(record[0] as! NSManagedObject)
-            do
-            {
-                    try managedContext.save()
-            }
-            catch
-            {
-                print(error)
-            }
-        }
-        catch
-        {
-            print(error)
         }
     }
     @IBOutlet weak var incsum: UILabel!
@@ -100,9 +100,41 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
-    
+    func sum_amt()
+    {
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
+        do
+        {
+            let record = try getContext().fetch(fetchReq)
+            var chk = 100
+            exp_sum = 0
+            inc_sum = 0
+            for i in record as! [NSManagedObject]
+            {
+                chk = i.value(forKey: "inc_exp") as! Int
+                if(chk == 0)
+                {
+                    exp_sum += i.value(forKey: "amount") as! Int
+                }
+                else if(chk == 1)
+                {
+                    inc_sum += i.value(forKey: "amount") as! Int
+                }
+            }
+            print("Expense Sum is :" ,exp_sum)
+            print("Income Sum is : " ,inc_sum)
+        }
+        catch let err
+        {
+            print(err.localizedDescription)
+        }
+    }
     override func viewDidLoad()
     {
+ styling
+
+        sum_amt()
+ master
         retrieveData()
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
