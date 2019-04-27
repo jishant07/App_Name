@@ -21,6 +21,7 @@ var con = ""
 var inc_sum = 0
 var exp_sum = 0
 
+
 class AddViewController: UIViewController
 {
     @IBOutlet weak var expenseButtonTitle: UIButton!
@@ -169,20 +170,9 @@ class AddViewController: UIViewController
         let delegate = UIApplication.shared.delegate as! AppDelegate
         return delegate.persistentContainer.viewContext
     }
-    
     @IBAction func SAVEClicked(_ sender: Any)
     {
         
-        if(exp == 0)
-        {
-            exp_sum += Int(amount.text!)!
-        }
-        else if(exp == 1)
-        {
-            inc_sum += Int(amount.text!)!
-        }
-        print("Income Sum :", inc_sum)
-        print("Expense Sum :", exp_sum)
             if ((acc != "") && (cat != "") && ((amount.text!) != "") && ((contents.text!) != ""))
             {
                 let context = getContext()
@@ -195,7 +185,6 @@ class AddViewController: UIViewController
                 do
                 {
                     try context.save()
-                    print(NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true).last! )
                 }
                 catch let err
                 {
