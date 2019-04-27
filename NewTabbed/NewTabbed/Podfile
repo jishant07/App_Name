@@ -1,0 +1,9 @@
+
+platform :ios, '9.0'
+
+target 'NewTabbed' do
+  use_frameworks!
+  pod 'SMDiagramViewSwift', '~> 1.0'
+
+
+end

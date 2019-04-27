@@ -1,0 +1,16 @@
+PODS:
+  - SMDiagramViewSwift (1.0.0)
+
+DEPENDENCIES:
+  - SMDiagramViewSwift (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SMDiagramViewSwift
+
+SPEC CHECKSUMS:
+  SMDiagramViewSwift: 03cfda445aff4dfa16b315bb76486bad71e6b881
+
+PODFILE CHECKSUM: 985cc962f0f29c736acdc2fbed57d03de641a87c
+
+COCOAPODS: 1.6.1

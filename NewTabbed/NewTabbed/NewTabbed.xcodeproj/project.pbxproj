@@ -13,10 +13,12 @@
 		3F8D3791225B4FC0003A33B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D378F225B4FC0003A33B1 /* LaunchScreen.storyboard */; };
 		3F8D3799225B5314003A33B1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D3798225B5314003A33B1 /* AddViewController.swift */; };
 		3FB25B1E225DFF600060AF6B /* FFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB25B1D225DFF600060AF6B /* FFirstViewController.swift */; };
+		52FE3C09BE16549EDFB81613 /* Pods_NewTabbed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA258C8AC5EBD01D7EE6026F /* Pods_NewTabbed.framework */; };
 		84E722AB2272D0A700FF1191 /* newmodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E722A92272D0A700FF1191 /* newmodel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06E78B9ABBA8D344424A0E36 /* Pods-NewTabbed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTabbed.debug.xcconfig"; path = "Target Support Files/Pods-NewTabbed/Pods-NewTabbed.debug.xcconfig"; sourceTree = "<group>"; };
 		3F8D3781225B4FBF003A33B1 /* NewTabbed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTabbed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8D3784225B4FBF003A33B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F8D378B225B4FBF003A33B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		3F8D3798225B5314003A33B1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		3FB25B1D225DFF600060AF6B /* FFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFirstViewController.swift; sourceTree = "<group>"; };
 		84E722AA2272D0A700FF1191 /* newmodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = newmodel.xcdatamodel; sourceTree = "<group>"; };
+		A1830B1337B2E174701DDCB1 /* Pods-NewTabbed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTabbed.release.xcconfig"; path = "Target Support Files/Pods-NewTabbed/Pods-NewTabbed.release.xcconfig"; sourceTree = "<group>"; };
+		CA258C8AC5EBD01D7EE6026F /* Pods_NewTabbed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewTabbed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FE3C09BE16549EDFB81613 /* Pods_NewTabbed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39799C986E0FC279C7A5C874 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06E78B9ABBA8D344424A0E36 /* Pods-NewTabbed.debug.xcconfig */,
+				A1830B1337B2E174701DDCB1 /* Pods-NewTabbed.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3F8D3778225B4FBF003A33B1 = {
 			isa = PBXGroup;
 			children = (
 				3F8D3783225B4FBF003A33B1 /* NewTabbed */,
 				3F8D3782225B4FBF003A33B1 /* Products */,
+				39799C986E0FC279C7A5C874 /* Pods */,
+				D939AE9B350C144B8E1C0D11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,14 @@
 			path = NewTabbed;
 			sourceTree = "<group>";
 		};
+		D939AE9B350C144B8E1C0D11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA258C8AC5EBD01D7EE6026F /* Pods_NewTabbed.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F8D3795225B4FC0003A33B1 /* Build configuration list for PBXNativeTarget "NewTabbed" */;
 			buildPhases = (
+				31E304B1BF31C24EC816DE5A /* [CP] Check Pods Manifest.lock */,
 				3F8D377D225B4FBF003A33B1 /* Sources */,
 				3F8D377E225B4FBF003A33B1 /* Frameworks */,
 				3F8D377F225B4FBF003A33B1 /* Resources */,
+				A2511F0FAB0AD139DE571812 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31E304B1BF31C24EC816DE5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewTabbed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2511F0FAB0AD139DE571812 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewTabbed/Pods-NewTabbed-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SMDiagramViewSwift/SMDiagramViewSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SMDiagramViewSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewTabbed/Pods-NewTabbed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F8D377D225B4FBF003A33B1 /* Sources */ = {
@@ -288,6 +362,7 @@
 		};
 		3F8D3796225B4FC0003A33B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E78B9ABBA8D344424A0E36 /* Pods-NewTabbed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +380,7 @@
 		};
 		3F8D3797225B4FC0003A33B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1830B1337B2E174701DDCB1 /* Pods-NewTabbed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
