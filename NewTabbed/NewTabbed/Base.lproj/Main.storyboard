@@ -95,7 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Charts"/>
                                 <connections>
-                                    <segue destination="iff-FZ-Yh9" kind="show" id="Msz-uz-dcj"/>
+                                    <segue destination="UwU-nk-mWv" kind="show" id="aWz-XL-q4U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -130,19 +130,26 @@
             <point key="canvasLocation" x="586.95652173913049" y="-320.08928571428572"/>
         </scene>
         <!--Chart View Controller-->
-        <scene sceneID="spm-8q-h9n">
+        <scene sceneID="Yfj-WO-QCw">
             <objects>
-                <viewController id="iff-FZ-Yh9" customClass="ChartViewController" customModule="NewTabbed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ECS-L9-4qh">
+                <viewController id="UwU-nk-mWv" customClass="ChartViewController" customModule="NewTabbed" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Od-ea-Jvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHE-fv-db7" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="87" y="312" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YfJ-sk-mqq"/>
+                        <viewLayoutGuide key="safeArea" id="6jH-LF-rSa"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uGv-qL-uKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zy4-42-61l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121.7391304347827" y="370.3125"/>
+            <point key="canvasLocation" x="930" y="416"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="FeG-XA-h3I">

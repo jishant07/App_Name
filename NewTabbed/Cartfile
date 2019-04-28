@@ -1,2 +1,4 @@
 github "i-schuetz/PieCharts"
+github "danielgindi/Charts" == 3.3.0
+github "danielgindi/Charts" ~> 3.3.0
 
