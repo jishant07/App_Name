@@ -131,10 +131,7 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     override func viewDidLoad()
     {
- styling
-
         sum_amt()
- master
         retrieveData()
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"

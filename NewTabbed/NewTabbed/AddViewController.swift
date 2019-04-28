@@ -28,12 +28,10 @@ class AddViewController: UIViewController
     @IBOutlet weak var incomeButtonTitle: UIButton!
     @IBOutlet weak var categoryButtonTitle: UIButton!
     @IBOutlet weak var accountButtonTitle: UIButton!
-    
+
     @IBAction func subviewclose(_ sender: Any)
     {
-        categorysubview.isHidden = true
-        accountsubview.isHidden = true
-        categoryincomesubview.isHidden = true
+          subviewclose()
     }
     
     @IBOutlet weak var categoryincomesubview: UIView!
@@ -43,7 +41,7 @@ class AddViewController: UIViewController
     {
         super.viewDidLoad()
         categorysubview.isHidden = true
-        accountsubview.isHidden = true
+        accountsubview.isHidden = false
         categoryincomesubview.isHidden = true
     }
     @IBAction func accountsClicked(_ sender: Any)
@@ -59,6 +57,11 @@ class AddViewController: UIViewController
     }
     @IBAction func categoryClicked(_ sender: Any)
     {
+        flowingsubviewscategory()
+    }
+    @IBOutlet weak var contents: UITextField!
+    @IBOutlet weak var amount: UITextField!
+    func flowingsubviewscategory(){
         if(exp == 0)
         {
             categorysubview.isHidden = false
@@ -78,8 +81,11 @@ class AddViewController: UIViewController
             self.present(alert, animated: true)
         }
     }
-    @IBOutlet weak var contents: UITextField!
-    @IBOutlet weak var amount: UITextField!
+    func subviewclose(){
+        categorysubview.isHidden = true
+        accountsubview.isHidden = true
+        categoryincomesubview.isHidden = true
+    }
     @IBAction func incomeClicked(_ sender: Any)
     {
         exp = 1
@@ -90,26 +96,34 @@ class AddViewController: UIViewController
     {
         acc = "Cash"
         accountButtonTitle.setTitle("Cash",for: .normal)
+        flowingsubviewscategory()
     }
     
     @IBAction func allowanceClicked(_ sender: Any) {
         cat = "Allowance";categoryButtonTitle.setTitle("Allowance",for: .normal)
+        subviewclose()
     }
     
     @IBAction func salaryClicked(_ sender: Any) {
         cat = "Salary";categoryButtonTitle.setTitle("Salary",for: .normal)
+        subviewclose()
     }
     
     @IBAction func bonusClicked(_ sender: Any) {
         cat = "Bonus";categoryButtonTitle.setTitle("Bonus",for: .normal)
+        subviewclose()
     }
     @IBAction func accountClicked(_ sender: Any)
     {
         acc = "Account";accountButtonTitle.setTitle("Account",for: .normal)
+        flowingsubviewscategory()
+        
     }
     @IBAction func cardClicked(_ sender: Any)
     {
         acc = "Card";accountButtonTitle.setTitle("Card",for: .normal)
+        flowingsubviewscategory()
+        
     }
     @IBAction func expenseClicked(_ sender: Any)
     {
@@ -120,50 +134,62 @@ class AddViewController: UIViewController
     @IBAction func foodClicked(_ sender: Any)
     {
         cat = "Food";categoryButtonTitle.setTitle("Food",for: .normal)
+        subviewclose()
     }
     @IBAction func SlifeClicked(_ sender: Any)
     {
         cat = "Social-Life";categoryButtonTitle.setTitle("Social-Life",for: .normal)
+        subviewclose()
     }
     @IBAction func selfdevClicked(_ sender: Any)
     {
         cat = "Self-Development";categoryButtonTitle.setTitle("Self-Development",for: .normal)
+        subviewclose()
     }
     @IBAction func transportClicked(_ sender: Any)
     {
         cat = "Transportation";categoryButtonTitle.setTitle("Transport",for: .normal)
+        subviewclose()
     }
     @IBAction func cultureClicked(_ sender: Any)
     {
         cat = "Culture";categoryButtonTitle.setTitle("Culture",for: .normal)
+        subviewclose()
     }
     @IBAction func householdClicked(_ sender: Any)
     {
         cat = "Household";categoryButtonTitle.setTitle("Household",for: .normal)
+        subviewclose()
     }
     @IBAction func apparelClicked(_ sender: Any)
     {
         cat = "Apparel";categoryButtonTitle.setTitle("Apparel",for: .normal)
+        subviewclose()
     }
     @IBAction func beautyClicked(_ sender: Any)
     {
         cat = "Beauty";categoryButtonTitle.setTitle("Beauty",for: .normal)
+        subviewclose()
     }
     @IBAction func healthClicked(_ sender: Any)
     {
         cat = "Health";categoryButtonTitle.setTitle("Health",for: .normal)
+        subviewclose()
     }
     @IBAction func educationClicked(_ sender: Any)
     {
         cat = "Education";categoryButtonTitle.setTitle("Education",for: .normal)
+        subviewclose()
     }
     @IBAction func giftClicked(_ sender: Any)
     {
         cat = "Gift";categoryButtonTitle.setTitle("Gift",for: .normal)
+        subviewclose()
     }
     @IBAction func othersClicked(_ sender: Any)
     {
         cat = "Others";categoryButtonTitle.setTitle("Others",for: .normal)
+        subviewclose()
     }
     func getContext() -> NSManagedObjectContext
     {

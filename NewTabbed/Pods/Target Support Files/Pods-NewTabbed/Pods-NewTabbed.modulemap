@@ -1,0 +1,6 @@
+framework module Pods_NewTabbed {
+  umbrella header "Pods-NewTabbed-umbrella.h"
+
+  export *
+  module * { export * }
+}
