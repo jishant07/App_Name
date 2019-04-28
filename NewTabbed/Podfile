@@ -4,5 +4,6 @@ target 'NewTabbed' do
 
   use_frameworks!
   pod 'PieCharts'
+  pod 'Charts'
 
 end
