@@ -14,7 +14,7 @@ class ChartViewController: UIViewController {
     func init_graph()
     {
         pieChart.chartDescription?.enabled = false
-        pieChart.drawHoleEnabled = true
+        pieChart.drawHoleEnabled = false
         pieChart.rotationAngle = 0
         pieChart.rotationEnabled = true
         pieChart.isUserInteractionEnabled = true
@@ -22,11 +22,9 @@ class ChartViewController: UIViewController {
         
         //pieChart.legend.enabled = false
         var entries : [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: 50.0,label: "Test"))
-        entries.append(PieChartDataEntry(value: 30.0,label: "ABC"))
-        entries.append(PieChartDataEntry(value: 40.0,label: "Test1"))
-        entries.append(PieChartDataEntry(value: 20.0,label: "ABC1"))
-        let dataSet = PieChartDataSet(entries :entries, label: "")
+        entries.append(PieChartDataEntry(value: Double(inc_sum),label: "Income"))
+        entries.append(PieChartDataEntry(value: Double(exp_sum),label: "Expense"))
+        let dataSet = PieChartDataSet(entries :entries, label: "")		
         let c1 = NSUIColor(hex: 0x3A015C)
         let c2 = NSUIColor(hex: 0x4F0147)
         let c3 = NSUIColor(hex: 0x35012C)

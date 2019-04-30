@@ -79,7 +79,7 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet weak var expsum: UILabel!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "tableCell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "tableCell")
         cell.textLabel?.text = (((tableData[indexPath.row])) )
         cell.detailTextLabel?.text = (subtitleData[indexPath.row] )
         return cell

@@ -2,6 +2,9 @@
 For submission during an internship
 
 To Dos :
-	Styling
-	Graphs
-	Addition of the data
+        Date
+        Column in tableView
+        Cost cutting suggestions
+        Constraints
+        Logo
+        
