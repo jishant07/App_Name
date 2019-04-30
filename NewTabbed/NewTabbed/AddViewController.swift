@@ -31,7 +31,8 @@ class AddViewController: UIViewController
 
     @IBAction func subviewclose(_ sender: Any)
     {
-          subviewclose()
+        subviewclose()
+        
     }
     
     @IBOutlet weak var categoryincomesubview: UIView!
@@ -43,6 +44,7 @@ class AddViewController: UIViewController
         categorysubview.isHidden = true
         accountsubview.isHidden = false
         categoryincomesubview.isHidden = true
+        
     }
     @IBAction func accountsClicked(_ sender: Any)
     {

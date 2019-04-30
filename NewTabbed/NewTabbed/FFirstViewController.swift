@@ -28,8 +28,8 @@ func retrieveData()
         {
             let newCatData = (i.value(forKey:"category"))
             let amtData = (i.value(forKey: "amount"))
-            tableData.append(newCatData as! String)
-            subtitleData.append("\(amtData!)")
+            tableData.insert(newCatData as! String, at: 0)
+            subtitleData.insert("\(amtData!)", at: 0)
         }
     }
     catch let err
