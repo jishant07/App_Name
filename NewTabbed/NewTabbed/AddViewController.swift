@@ -9,10 +9,6 @@
 import UIKit
 import CoreData
 
-var incomeData = [Any]()
-
-var contentsData = [Any]()
-var incData = [Any]()
 var exp = 100
 var acc = ""
 var cat = ""
@@ -210,6 +206,10 @@ class AddViewController: UIViewController
                 newData.setValue(cat, forKey: "category")
                 newData.setValue(Int(amount.text!)!, forKey:"amount")
                 newData.setValue(contents.text!, forKey: "contents")
+                let date = Date()
+                //let formatter = DateFormatter()
+                //formatter.dateFormat = "dd.MM.yyyy"
+                newData.setValue(date, forKey: "date")
                 do
                 {
                     try context.save()
@@ -218,7 +218,6 @@ class AddViewController: UIViewController
                 {
                     print(err.localizedDescription)
                 }
-                
             }
             else
             {
