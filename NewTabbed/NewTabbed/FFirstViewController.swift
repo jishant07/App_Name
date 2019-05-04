@@ -11,7 +11,7 @@ import CoreData
 
 var tableData = [String]()
 var subtitleData = [String]()
-var contentData = [String]()
+
 func getContext() -> NSManagedObjectContext
 {
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -29,11 +29,8 @@ func retrieveData()
         {
             let newCatData = (i.value(forKey:"category"))
             let amtData = (i.value(forKey: "amount"))
-            //let date = (i.value(forKey: "date"))
-            let contents = (i.value(forKey: "contents"))
-            tableData.append(newCatData as! String)
-            subtitleData.append("\(amtData!)")
-            contentData.append(contents as! String)
+            tableData.insert(newCatData as! String, at: 0)
+            subtitleData.insert("\(amtData!)", at: 0)
         }
     }
     catch let err
@@ -65,11 +62,12 @@ func deleteData()
 }
 class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
-    @IBOutlet weak var contentsLabel: UILabel!
+    @IBOutlet weak var add: UIButton!
+   
+    
+
+    @IBOutlet weak var sample2: UIButton!
     @IBOutlet weak var mytab: UITableView!
-    @IBOutlet weak var incsum: UILabel!
-    @IBOutlet weak var totalsum: UILabel!
-    @IBOutlet weak var expsum: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if(tableData.count < subtitleData.count)
@@ -81,13 +79,16 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
             return subtitleData.count
         }
     }
-    
+    @IBOutlet weak var incsum: UILabel!
+ 
+    @IBOutlet weak var sample: UIButton!
+    @IBOutlet weak var totalsum: UILabel!
+    @IBOutlet weak var expsum: UILabel!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FFirstViewControllerTableViewCell
-        cell.categoryLabel.text! = tableData[indexPath.row]
-        cell.amountLabel.text! = subtitleData[indexPath.row]
-        cell.contentLabel.text! = contentData[indexPath.row]
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "tableCell")
+        cell.textLabel?.text = (((tableData[indexPath.row])) )
+        cell.detailTextLabel?.text = (subtitleData[indexPath.row] )
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
@@ -139,10 +140,34 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         sum_amt()
         retrieveData()
-        print(contentData)
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
         totalsum.text = "\(inc_sum - exp_sum)"
         super.viewDidLoad()
+        add.applydesign()
+        sample.applydesign1()
+        sample2.applydesign1()
+    }
+}
+extension UIButton{
+    func applydesign(){
+        self.backgroundColor = UIColor(hex: 0x63B221)
+        self.layer.cornerRadius = self.frame.height / 2
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+    }
+    func applydesign1(){
+        self.backgroundColor = UIColor(hex: 0x63B221)
+        //self.layer.cornerRadius = self.frame.height / 2
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
     }
 }
