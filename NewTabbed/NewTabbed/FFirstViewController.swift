@@ -80,7 +80,6 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     @IBOutlet weak var incsum: UILabel!
- 
     @IBOutlet weak var sample: UIButton!
     @IBOutlet weak var totalsum: UILabel!
     @IBOutlet weak var expsum: UILabel!
@@ -97,6 +96,9 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         {
             tableData.remove(at: indexPath.row)
             subtitleData.remove(at: indexPath.row)
+            deleteData()
+            retrieveData()
+            sum_amt()
         }
         mytab.reloadData()
     }
@@ -128,13 +130,14 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
                     inc_sum += i.value(forKey: "amount") as! Int
                 }
             }
-            print("Expense Sum is :" ,exp_sum)
-            print("Income Sum is : " ,inc_sum)
         }
         catch let err
         {
             print(err.localizedDescription)
         }
+        incsum.text = "\(inc_sum)"
+        expsum.text = "\(exp_sum)"
+        totalsum.text = "\(inc_sum - exp_sum)"
     }
     override func viewDidLoad()
     {
