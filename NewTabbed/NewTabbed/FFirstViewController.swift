@@ -31,9 +31,9 @@ func retrieveData()
             let amtData = (i.value(forKey: "amount"))
             //let date = (i.value(forKey: "date"))
             let contents = (i.value(forKey: "contents"))
-            tableData.insert(newCatData as! String, at: 0)
-            subtitleData.insert("\(amtData!)", at: 0)
-            contentData.insert(contents as! String, at: 0)
+            tableData.append(newCatData as! String)
+            subtitleData.append("\(amtData!)")
+            contentData.append(contents as! String)
         }
     }
     catch let err
@@ -67,6 +67,9 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
 {
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var mytab: UITableView!
+    @IBOutlet weak var incsum: UILabel!
+    @IBOutlet weak var totalsum: UILabel!
+    @IBOutlet weak var expsum: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if(tableData.count < subtitleData.count)
@@ -78,17 +81,13 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
             return subtitleData.count
         }
     }
-    @IBOutlet weak var incsum: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var totalsum: UILabel!
-    @IBOutlet weak var expsum: UILabel!
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "tableCell")
-        cell.textLabel?.text = (((tableData[indexPath.row])))
-        cell.detailTextLabel?.text = (subtitleData[indexPath.row])
-        contentLabel?.text = (contentData[indexPath.row])
-        print(contentData[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FFirstViewControllerTableViewCell
+        cell.categoryLabel.text! = tableData[indexPath.row]
+        cell.amountLabel.text! = subtitleData[indexPath.row]
+        cell.contentLabel.text! = contentData[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
@@ -140,6 +139,7 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         sum_amt()
         retrieveData()
+        print(contentData)
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
         totalsum.text = "\(inc_sum - exp_sum)"
