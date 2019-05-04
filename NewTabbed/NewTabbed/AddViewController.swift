@@ -254,9 +254,6 @@ class AddViewController: UIViewController, UITextFieldDelegate
                 newData.setValue(Int(amount.text!)!, forKey:"amount")
                 newData.setValue(contents.text!, forKey: "contents")
                 let date = Date()
-                //let formatter = DateFormatter()
-                //formatter.dateFormat = "dd.MM.yyyy"
-                //let result = formatter.string(from: date)
                 newData.setValue(date , forKey: "date")
                 do
                 {
