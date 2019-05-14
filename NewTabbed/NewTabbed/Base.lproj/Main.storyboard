@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hMG-KR-Hip">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5bS-dg-ofT">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -122,14 +122,6 @@
                                     <action selector="sample:" destination="9pv-A4-QxB" eventType="touchUpInside" id="faP-n0-kT9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deR-9h-INp">
-                                <rect key="frame" x="27" y="817" width="55" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Main"/>
-                                <connections>
-                                    <segue destination="yI2-dh-xCU" kind="show" id="3wt-WS-dbS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -149,7 +141,6 @@
                             <constraint firstItem="B2s-fJ-NDm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="106" id="NOd-Yn-XyJ"/>
                             <constraint firstItem="EwS-A1-CEd" firstAttribute="firstBaseline" secondItem="pPk-rw-gVa" secondAttribute="firstBaseline" id="Ozy-t6-0dY"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="mAa-gH-f6c" secondAttribute="trailing" constant="10" id="Pwu-la-PBs"/>
-                            <constraint firstItem="deR-9h-INp" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="27" id="QTE-P6-LQE"/>
                             <constraint firstItem="pPk-rw-gVa" firstAttribute="centerX" secondItem="mAa-gH-f6c" secondAttribute="centerX" id="UZL-ds-XRh"/>
                             <constraint firstItem="D68-LO-RJs" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="139" id="UmN-Ae-sMf"/>
                             <constraint firstItem="KDn-7p-lYO" firstAttribute="centerX" secondItem="KYa-oP-ic5" secondAttribute="centerX" id="WML-Qi-gQZ"/>
@@ -163,11 +154,8 @@
                             <constraint firstItem="aav-du-8TY" firstAttribute="top" secondItem="nvb-aS-Z3P" secondAttribute="bottom" id="niY-5a-hxk"/>
                             <constraint firstItem="KYa-oP-ic5" firstAttribute="baseline" secondItem="D68-LO-RJs" secondAttribute="baseline" id="no7-Uc-PyX"/>
                             <constraint firstItem="VvE-46-VKU" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="or9-5V-REw"/>
-                            <constraint firstItem="VvE-46-VKU" firstAttribute="bottom" secondItem="deR-9h-INp" secondAttribute="bottom" id="rsv-NO-Wwd"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="deR-9h-INp" secondAttribute="bottom" constant="11" id="sFU-n9-qWg"/>
                             <constraint firstItem="EwS-A1-CEd" firstAttribute="leading" secondItem="KDn-7p-lYO" secondAttribute="trailing" constant="38" id="so6-Ew-U3X"/>
                             <constraint firstItem="B2s-fJ-NDm" firstAttribute="bottom" secondItem="VvE-46-VKU" secondAttribute="bottom" id="wMU-Ai-noU"/>
-                            <constraint firstItem="B2s-fJ-NDm" firstAttribute="leading" secondItem="deR-9h-INp" secondAttribute="trailing" constant="24" id="xZY-DG-gBG"/>
                             <constraint firstItem="c6Q-od-kgj" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="yep-KL-0Hd"/>
                             <constraint firstItem="KDn-7p-lYO" firstAttribute="firstBaseline" secondItem="EwS-A1-CEd" secondAttribute="firstBaseline" id="zBw-pO-Btp"/>
                         </constraints>
@@ -217,6 +205,9 @@
                                 <state key="normal" title="Know Your Budget">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9pv-A4-QxB" kind="show" id="Xby-QB-Cka"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-Mx-g0y">
                                 <rect key="frame" x="0.0" y="240" width="414" height="476"/>
@@ -239,19 +230,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z0e-iu-8iV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MoV-MM-pwO"/>
                     <connections>
                         <outlet property="kyb" destination="HEb-vE-tC9" id="oIq-m3-bQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAf-5n-CyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586.95652173913049" y="391.74107142857139"/>
+            <point key="canvasLocation" x="2407.2463768115945" y="391.74107142857139"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="Yfj-WO-QCw">
             <objects>
                 <viewController id="UwU-nk-mWv" customClass="ChartViewController" customModule="NewTabbed" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Od-ea-Jvv">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="2Od-ea-Jvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -331,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zy4-42-61l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495.6521739130435" y="387.72321428571428"/>
+            <point key="canvasLocation" x="3315.9420289855075" y="387.72321428571428"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="FeG-XA-h3I">
@@ -409,7 +401,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SAVEClicked:" destination="wQU-Jj-RMD" eventType="touchUpInside" id="7xq-mQ-Owx"/>
-                                    <segue destination="hMG-KR-Hip" kind="show" id="Ikl-Tc-kGR"/>
+                                    <segue destination="9pv-A4-QxB" kind="show" id="T89-xg-KrH"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEM-ck-Ewe">
@@ -1031,28 +1023,29 @@
             </objects>
             <point key="canvasLocation" x="2263.768115942029" y="-320.08928571428572"/>
         </scene>
-        <!--First-->
-        <scene sceneID="Dyt-I9-j5n">
+        <!--Navigation Controller-->
+        <scene sceneID="ems-Aq-bO9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hMG-KR-Hip" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bS-dg-ofT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fPl-AD-KpK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J51-By-7MW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="dgl-Gx-S5O"/>
+                        <segue destination="yI2-dh-xCU" kind="relationship" relationship="rootViewController" id="nC6-uh-YUq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Du-vn-ijB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzB-Xg-hQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586.95652173913049" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="1497.1014492753625" y="391.74107142857139"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="iTunesArtwork.png" width="768" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xby-QB-Cka"/>
+    </inferredMetricsTieBreakers>
 </document>

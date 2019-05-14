@@ -115,7 +115,6 @@ func retrive_exp_inc_cat_data()
                 bonus += i.value(forKey: "amount") as! Int
             }
         }
-        print(food," ",culture," ",social," ",self_dev," ",salary," ",bonus," ",allowance)
     }
     catch let err
     {
@@ -143,7 +142,18 @@ func retrieveData()
             }
             let yy = "\(newCatData as! String)"
             tableData.insert(yy + " (" + xx + ")", at: 0)
-            subtitleData.insert("\(amtData!)", at: 0)
+            if(i.value(forKey: "account") as! String == "Cash")
+            {
+                subtitleData.insert("💰\(amtData!)", at: 0)
+            }
+            if(i.value(forKey: "account") as! String == "Account")
+            {
+                subtitleData.insert("🏧\(amtData!)", at: 0)
+            }
+            if(i.value(forKey: "account") as! String == "Card")
+            {
+                subtitleData.insert("💳\(amtData!)", at: 0)
+            }
         }
     }
     catch let err
