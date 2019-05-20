@@ -247,25 +247,15 @@ class AddViewController: UIViewController, UITextFieldDelegate
     @IBAction func SAVEClicked(_ sender: Any)
     {
         
-            if ((acc != "") && (cat != "") && ((amount.text!) != "") && ((contents.text!) != ""))
+        let amt = Int(amount.text!)
+        if ((acc != "") && (cat != "") && ((amount.text!) != "") && ((contents.text!) != "") && (amt != nil))
             {
                 let context = getContext()
                 let newData = NSEntityDescription.insertNewObject(forEntityName: "Added_Data", into: context)
                 newData.setValue(exp, forKey: "inc_exp")
                 newData.setValue(acc, forKey: "account")
                 newData.setValue(cat, forKey: "category")
-                let amt = Int(amount.text!)
-                if(amt != nil)
-                {
-                   newData.setValue(Int(amount.text!)!, forKey:"amount")
-                }
-                else
-                {
-                    let alert = UIAlertController(title: "Invalid Amount", message: nil, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
-                    
-                }
+                 newData.setValue(Int(amount.text!)!, forKey:"amount")
                 newData.setValue(contents.text!, forKey: "contents")
                 let date = Date()
                 newData.setValue(date , forKey: "date")
@@ -281,9 +271,18 @@ class AddViewController: UIViewController, UITextFieldDelegate
             }
             else
             {
-                let alert = UIAlertController(title: "Fill all the details", message: nil, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                if((amt == nil))
+                {
+                    let alert = UIAlertController(title: "Invalid Amount", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Fill all the details", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                }
             }
         }
     }
