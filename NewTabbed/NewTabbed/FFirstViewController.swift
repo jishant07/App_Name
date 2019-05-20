@@ -27,6 +27,7 @@ var allowance = 0
 var salary = 0
 var bonus = 0
 var dash = 1
+var chk = 0
 func getContext() -> NSManagedObjectContext
 {
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -175,8 +176,7 @@ func retrieveData()
 }
 func deleteData(index : Int)
 {
-    var chk = 0
-    print("HELLO",index)
+    print("Index ",index)
     let managedContext = getContext()
     let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
     do
@@ -184,10 +184,9 @@ func deleteData(index : Int)
         let record = try getContext().fetch(fetchReq)
         for i in record as! [NSManagedObject]
         {
-            print(chk,i)
-            if(chk == index)
+            print("Check ",chk)
+            if(index == chk)
             {
-                print("Should delete")
                 managedContext.delete(i)
                 do
                 {
@@ -197,6 +196,7 @@ func deleteData(index : Int)
                 {
                     print(error)
                 }
+                break
             }
             chk+=1
         }
@@ -210,14 +210,10 @@ func deleteData(index : Int)
 class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     @IBOutlet weak var add: UIButton!
-    
-    
-    
-  
     @IBOutlet weak var dashboard: UIView!
-
     @IBOutlet weak var sample2: UIButton!
-    @IBAction func dashbutton(_ sender: Any) {
+    @IBAction func dashbutton(_ sender: Any)
+    {
         dashboard.isHidden = true
         dash = 0
     }
@@ -267,13 +263,6 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         mytab.reloadData()
     }
-    override func viewDidAppear(_ animated: Bool)
-    {
-        mytab.reloadData()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
     func sum_amt()
     {
         let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
@@ -304,15 +293,20 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         expsum.text = "\(exp_sum)"
         totalsum.text = "\(inc_sum - exp_sum)"
     }
+    override func viewDidAppear(_ animated: Bool)
+    {
+        viewDidLoad()
+    }
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        mytab.reloadData()
         sum_amt()
         retrieveData()
         retrive_exp_inc_cat_data()
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
         totalsum.text = "\(inc_sum - exp_sum)"
-        super.viewDidLoad()
         add.applydesign()
         sample.applydesign1()
         sample2.applydesign1()

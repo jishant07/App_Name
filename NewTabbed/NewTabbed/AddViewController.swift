@@ -262,6 +262,8 @@ class AddViewController: UIViewController, UITextFieldDelegate
                 do
                 {
                     try context.save()
+                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true)
                 }
                 catch let err
                 {

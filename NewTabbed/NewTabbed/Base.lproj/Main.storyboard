@@ -395,7 +395,6 @@
                                 </state>
                                 <connections>
                                     <action selector="SAVEClicked:" destination="wQU-Jj-RMD" eventType="touchUpInside" id="7xq-mQ-Owx"/>
-                                    <segue destination="3JW-vQ-Qub" kind="show" id="T89-xg-KrH"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEM-ck-Ewe">
