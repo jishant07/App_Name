@@ -211,6 +211,7 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
 {
     @IBOutlet weak var add: UIButton!
     @IBOutlet weak var dashboard: UIView!
+    @IBOutlet weak var charts: UIButton!
     @IBOutlet weak var sample2: UIButton!
     @IBAction func dashbutton(_ sender: Any)
     {
@@ -307,9 +308,10 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         incsum.text = "\(inc_sum)"
         expsum.text = "\(exp_sum)"
         totalsum.text = "\(inc_sum - exp_sum)"
-        add.applydesign()
+        add.applydesign1()
         sample.applydesign1()
         sample2.applydesign1()
+        charts.applydesign1()
         if(dash == 0){
             dashboard.isHidden = true
         }
