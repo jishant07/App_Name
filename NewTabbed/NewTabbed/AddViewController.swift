@@ -41,8 +41,14 @@ class AddViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        exp = 0
+        //expenseButtonTitle.backgroundColor = UIColor(red: 0.4, green: 1.0, blue: 0.2, alpha: 0.5)
+        incomeButtonTitle.backgroundColor = UIColor(red: 1, green: 1.0, blue: 1, alpha: 0.5)
+        incomeButtonTitle.setTitleColor(UIColor.black, for: .normal)
+        expsample.applydesign1()
+        accountsubview.isHidden = false
         categorysubview.isHidden = true
-        accountsubview.isHidden = true
+        
         categoryincomesubview.isHidden = true
         self.contents.delegate = self
         save1.applydesign()
@@ -51,9 +57,6 @@ class AddViewController: UIViewController, UITextFieldDelegate
         sampletextfield1.isUserInteractionEnabled = false
 
     }
- 
-
-
     @IBOutlet weak var sampletextfield1: UITextField!
     @IBOutlet weak var sampletextfield: UITextField!
     @IBOutlet weak var expsample: UIButton!
@@ -251,7 +254,18 @@ class AddViewController: UIViewController, UITextFieldDelegate
                 newData.setValue(exp, forKey: "inc_exp")
                 newData.setValue(acc, forKey: "account")
                 newData.setValue(cat, forKey: "category")
-                newData.setValue(Int(amount.text!)!, forKey:"amount")
+                let amt = Int(amount.text!)
+                if(amt != nil)
+                {
+                   newData.setValue(Int(amount.text!)!, forKey:"amount")
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Invalid Amount", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                }
                 newData.setValue(contents.text!, forKey: "contents")
                 let date = Date()
                 newData.setValue(date , forKey: "date")

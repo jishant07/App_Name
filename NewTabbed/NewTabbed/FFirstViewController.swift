@@ -26,6 +26,7 @@ var others = 0
 var allowance = 0
 var salary = 0
 var bonus = 0
+var dash = 1
 func getContext() -> NSManagedObjectContext
 {
     let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -144,16 +145,27 @@ func retrieveData()
             tableData.insert(yy + " (" + xx + ")", at: 0)
             if(i.value(forKey: "account") as! String == "Cash")
             {
-                subtitleData.insert("💰\(amtData!)", at: 0)
+                
+                subtitleData.insert("\(amtData!)💰", at: 0)
             }
             if(i.value(forKey: "account") as! String == "Account")
             {
-                subtitleData.insert("🏧\(amtData!)", at: 0)
+                subtitleData.insert("\(amtData!)🏧", at: 0)
             }
             if(i.value(forKey: "account") as! String == "Card")
             {
-                subtitleData.insert("💳\(amtData!)", at: 0)
-            }
+                subtitleData.insert("\(amtData!)💳", at: 0)
+                
+//                subtitleData.insert("💰\(amtData!)", at: 0)
+//            }
+//            if(i.value(forKey: "account") as! String == "Account")
+//            {
+//                subtitleData.insert("🏧\(amtData!)", at: 0)
+//            }
+//            if(i.value(forKey: "account") as! String == "Card")
+//            {
+//                subtitleData.insert("💳\(amtData!)", at: 0)
+           }
         }
     }
     catch let err
@@ -164,6 +176,7 @@ func retrieveData()
 func deleteData(index : Int)
 {
     var chk = 0
+    print("HELLO",index)
     let managedContext = getContext()
     let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Added_Data")
     do
@@ -187,6 +200,7 @@ func deleteData(index : Int)
             }
             chk+=1
         }
+        chk = 0
     }
     catch
     {
@@ -196,10 +210,17 @@ func deleteData(index : Int)
 class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     @IBOutlet weak var add: UIButton!
-   
     
+    
+    
+  
+    @IBOutlet weak var dashboard: UIView!
 
     @IBOutlet weak var sample2: UIButton!
+    @IBAction func dashbutton(_ sender: Any) {
+        dashboard.isHidden = true
+        dash = 0
+    }
     @IBOutlet weak var mytab: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -295,6 +316,12 @@ class FFirstViewController: UIViewController,UITableViewDelegate,UITableViewData
         add.applydesign()
         sample.applydesign1()
         sample2.applydesign1()
+        if(dash == 0){
+            dashboard.isHidden = true
+        }
+        else{
+            dashboard.isHidden = false
+        }
     }
 }
 extension UIButton{
