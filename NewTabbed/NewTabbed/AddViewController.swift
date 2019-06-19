@@ -40,12 +40,24 @@ class AddViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var accountsubview: UIView!
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+        let alert = UIAlertController(title: "Income/Expense", message: "Please select apropriate option",         preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Income", style: UIAlertAction.Style.default, handler: { _ in
+            self.incomeClicked((Any).self)
+        }))
+        alert.addAction(UIAlertAction(title: "Expense",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(_: UIAlertAction!) in
+                                        self.expenseClicked((Any).self)
+        }))
+        self.present(alert, animated: true, completion: nil)
         exp = 0
         //expenseButtonTitle.backgroundColor = UIColor(red: 0.4, green: 1.0, blue: 0.2, alpha: 0.5)
         incomeButtonTitle.backgroundColor = UIColor(red: 1, green: 1.0, blue: 1, alpha: 0.5)
+        expenseButtonTitle.backgroundColor = UIColor(red: 1, green: 1.0, blue: 1, alpha: 0.5)
         incomeButtonTitle.setTitleColor(UIColor.black, for: .normal)
         expsample.applydesign1()
+        incsample.applydesign2()
         accountsubview.isHidden = false
         categorysubview.isHidden = true
         
@@ -55,6 +67,7 @@ class AddViewController: UIViewController, UITextFieldDelegate
         save1.backgroundColor = UIColor(hex: 0x63B221)
         sampletextfield.isUserInteractionEnabled = false
         sampletextfield1.isUserInteractionEnabled = false
+        super.viewDidLoad()
 
     }
     @IBOutlet weak var sampletextfield1: UITextField!
@@ -118,6 +131,7 @@ class AddViewController: UIViewController, UITextFieldDelegate
         expenseButtonTitle.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
         expenseButtonTitle.setTitleColor(UIColor.black, for: .normal)
         incsample.applydesign1()
+        expsample.applydesign2()
         accountsubview.isHidden = false
     }
     @IBAction func cashClicked(_ sender: Any)
@@ -166,6 +180,7 @@ class AddViewController: UIViewController, UITextFieldDelegate
         incomeButtonTitle.backgroundColor = UIColor(red: 1, green: 1.0, blue: 1, alpha: 0.5)
         incomeButtonTitle.setTitleColor(UIColor.black, for: .normal)
         expsample.applydesign1()
+        incsample.applydesign2()
         accountsubview.isHidden = false
     }
     @IBAction func foodClicked(_ sender: Any)

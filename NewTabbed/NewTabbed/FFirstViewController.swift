@@ -341,6 +341,16 @@ extension UIButton{
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         
     }
+    func applydesign2(){
+        self.backgroundColor = UIColor(hex: 0xd4d5d6)
+        //self.layer.cornerRadius = self.frame.height / 2
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+    }
 }
 extension String {
     subscript (i: Int) -> Character {
